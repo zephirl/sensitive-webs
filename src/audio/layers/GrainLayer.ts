@@ -26,8 +26,6 @@ const RING_DATA: RingData[] = [
 const MOD_IDX_MAX = 34;
 const HARM_MAX = 4.2;
 
-export const RING_FREQS = RING_DATA.map(r => r.freq);
-
 export class GrainLayer {
   private mainSynth: Tone.FMSynth;
   private padSynth:  Tone.Synth;

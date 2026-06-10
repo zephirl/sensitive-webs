@@ -8,10 +8,6 @@
  * page.tsx), which is direction-agnostic, so they tune live without re-flashing.
  */
 
-/** Default per-wire thresholds, on the normalized 0..1 scale. */
-export const DEFAULT_PROXIMITY_THRESHOLD = 0.18;
-export const DEFAULT_TOUCH_THRESHOLD = 0.55;
-
 /**
  * Minimum raw span |touch - rest| for a wire to count as calibrated. Below
  * this, normalization returns 0 so an un-calibrated wire reads empty until you
