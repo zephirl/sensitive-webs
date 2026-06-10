@@ -17,15 +17,17 @@ import { DroneLayer } from "./layers/DroneLayer";
 import { GrainLayer } from "./layers/GrainLayer";
 import { NoiseLayer } from "./layers/NoiseLayer";
 import { WobbleLayer } from "./layers/WobbleLayer";
+import { BreathCueLayer } from "./layers/BreathCueLayer";
 import type { MappedSensorData } from "./SensorInputMapper";
 
 export class SoundscapeEngine {
   // Layers are null until start() is called so that Tone.js nodes are only
   // created after AudioContext is running (sampleRate > 0).
-  private drone:  DroneLayer  | null = null;
-  private grain:  GrainLayer  | null = null;
-  private noise:  NoiseLayer  | null = null;
-  private wobble: WobbleLayer | null = null;
+  private drone:  DroneLayer      | null = null;
+  private grain:  GrainLayer      | null = null;
+  private noise:  NoiseLayer      | null = null;
+  private wobble: WobbleLayer     | null = null;
+  private breath: BreathCueLayer  | null = null;
   private running = false;
 
   /**
@@ -44,6 +46,8 @@ export class SoundscapeEngine {
     this.grain  = new GrainLayer();
     this.noise  = new NoiseLayer();
     this.wobble = new WobbleLayer();
+    this.breath = new BreathCueLayer();
+    await this.breath.init();
 
     this.drone.start();
     this.grain.start();
@@ -57,14 +61,30 @@ export class SoundscapeEngine {
     return this.running;
   }
 
-  /** Call from pointerDown – triggers the singing-bowl note for the ring. */
+  /** Call on hover (ring change) – triggers the ambient singing-bowl note. */
   triggerNote(ringIndex: number): void {
     this.grain?.triggerAttack(ringIndex);
   }
 
-  /** Call from pointerUp – releases the note into its long reverb tail. */
+  /** Call on pointer leave – releases the note into its long reverb tail. */
   releaseNote(): void {
     this.grain?.triggerRelease();
+  }
+
+  /** Call on click – plays a short breath-cue tone for the given ring. */
+  playBreathCue(ringIndex: number): void {
+    this.breath?.play(ringIndex);
+  }
+
+  /** Panic stop: release the ambient note and cut every playing breath cue. */
+  silenceAll(): void {
+    this.grain?.triggerRelease();
+    this.breath?.stopAll();
+  }
+
+  /** Mute or unmute all output. */
+  setMuted(muted: boolean): void {
+    Tone.getDestination().mute = muted;
   }
 
   /**
@@ -88,6 +108,7 @@ export class SoundscapeEngine {
     this.grain?.dispose();
     this.noise?.dispose();
     this.wobble?.dispose();
+    this.breath?.dispose();
     this.running = false;
   }
 }

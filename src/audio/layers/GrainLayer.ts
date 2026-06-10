@@ -47,20 +47,20 @@ export class GrainLayer {
       envelope:           { attack: 0.30, decay: 1.8, sustain: 0.16, release: 10.0 },
       modulation:         { type: "triangle" },
       modulationEnvelope: { attack: 0.3, decay: 1.2, sustain: 0.0,  release: 8.0 },
-      volume: -18,
+      volume: -11,
     });
 
     this.padSynth = new Tone.Synth({
       oscillator: { type: "triangle" },
       envelope:   { attack: 0.45, decay: 1.2, sustain: 0.20, release: 12.0 },
-      volume: -23,
+      volume: -16,
     });
 
     this.filter = new Tone.Filter({ type: "lowpass", frequency: 700, Q: 1.2, rolloff: -24 });
     this.chorus = new Tone.Chorus({ frequency: 0.12, delayTime: 4.5, depth: 0.42, wet: 0.24 });
     this.delay  = new Tone.FeedbackDelay({ delayTime: 0.42, feedback: 0.18, wet: 0.16 });
     this.panner = new Tone.Panner(0);
-    this.gain   = new Tone.Gain(0.24);
+    this.gain   = new Tone.Gain(0.52);
 
     this.mainSynth.connect(this.filter);
     this.padSynth.connect(this.filter);
@@ -115,8 +115,8 @@ export class GrainLayer {
       const targetHarm = rd.harm + sweep * (HARM_MAX - rd.harm);
       this.mainSynth.modulationIndex.rampTo(targetMod, 0.10);
       this.mainSynth.harmonicity.rampTo(targetHarm, 0.12);
-      this.mainSynth.volume.rampTo(-18 + intensity * 8, 0.12);
-      this.padSynth.volume.rampTo(-23 + intensity * 5, 0.14);
+      this.mainSynth.volume.rampTo(-11 + intensity * 7, 0.12);
+      this.padSynth.volume.rampTo(-16 + intensity * 5, 0.14);
     }
 
     this.filter.frequency.rampTo(320 + intensity * 1180, 0.14);
@@ -124,7 +124,7 @@ export class GrainLayer {
     this.delay.wet.rampTo(0.10 + intensity * 0.10, 0.14);
     this.delay.feedback.rampTo(0.14 + intensity * 0.16, 0.16);
     this.panner.pan.rampTo(data.positionX * 2 - 1, 0.10);
-    this.gain.gain.rampTo(0.20 + intensity * 0.10, 0.14);
+    this.gain.gain.rampTo(0.52 + intensity * 0.20, 0.14);
   }
 
   dispose() {
