@@ -116,8 +116,10 @@ Then open the URL shown in the terminal (usually `http://localhost:3000`, or `30
 
 ## Stack
 
+Most of the interface was vibe-coded using Claude, using the following tech stack:
 - Next.js
 - React
 - TypeScript
 - Tone.js
 - Web Serial API (reading the XIAO ESP32-S3)
+- Arduino IDE
