@@ -2,28 +2,29 @@
 
 Sensitive Webs is an interactive dream-catcher-style web, which turns your gestures into a sonic atmosphere and prompts you to feel and reflect about your state as you (or someone else) plays with it.
 
-[![Video Demo]()](https://youtube.com/shorts)
+![Capacitive Web with AI Enhanced](public/demo_capacitive_web_AI_enhanced.JPG)
 
 This project was created as part of the Sensitive Machines 2-day hackathon between [SONY-CSL](https://csl.sony.fr/) and [IFT](https://ift.devinci.fr/) with (in alphabetical order):
-- Louis Badr 
-- Mariana Tamashiro
-- Michael Anslow
-- Thomas Juldo
-- Zéphir Lorne
+- [Louis Badr ](https://louis-badr.fr/)
+- [Mariana Tamashiro](https://www.marianatamashiro.com/)
+- [Michael Anslow](https://csl.sony.fr/members/michael-anslow/)
+- [Thomas Juldo](https://www.thomasjuldo.com/)
+- [Zéphir Lorne](https://zephirlorne.com/)
+
+Below is just a first iteration of the project. Another workshop is planned for Autumn 2026 to iterate on this prototype. Notably the goal is to have the LEDs light up dynamically, updating the sounds and improving the structure, based on this other prototype made at the same time during the hackathon: [https://github.com/MBAnslow/ift-x-csl-web-lights-sounds](https://github.com/MBAnslow/ift-x-csl-web-lights-sounds).
 
 
 
 ## Interface
+
+![Sensitive Webs web interface](public/interface_screenshot.png)
 
 - **Capacitive web** (enameled copper wires wired into a XIAO ESP32-S3): bringing your hand near a wire ramps up the proximity music, and firmly touching the wire triggers a guided voice cue.
 - **Screen and mouse**: emulate the behavior of the capacitive web by hovering over it with your mouse to pan the music and by clicking the rings to play the *voice cues*.
 
 Each ring is a different music tone and has a different voice cue theme (Greeting/Goodbye, Inviting to stay in current posture and feeling, In/out-breath guidance to help attend our bodily sensation, Prompts to reflect on your past night's dreams). Different audio-files can be uploaded to modify the sequence.
 
-
-![Sensitive Webs interface](public/interface_screenshot.png)
-
-
+![Capacitive Web](public/demo_capacitive_web.jpeg)
 
 ### On-screen controls
 
