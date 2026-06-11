@@ -11,8 +11,7 @@ This project was created as part of the Sensitive Machines 2-day hackathon betwe
 - [Thomas Juldo](https://www.thomasjuldo.com/)
 - [Zéphir Lorne](https://zephirlorne.com/)
 
-Below is just a first iteration of the project. Another workshop is planned for Autumn 2026 to iterate on this prototype. Notably the goal is to have the LEDs light up dynamically, updating the sounds and improving the structure, based on this other prototype made at the same time during the hackathon: [https://github.com/MBAnslow/ift-x-csl-web-lights-sounds](https://github.com/MBAnslow/ift-x-csl-web-lights-sounds).
-
+Below is just a first iteration of the project. Another workshop is planned for Autumn 2026 to iterate on this prototype. Notably the goal is to have the LEDs light up dynamically, updating the sounds and improving the structure, based on this other prototype made at the same time during the hackathon: [MBAnslow/ift-x-csl-web-lights-sounds](https://github.com/MBAnslow/ift-x-csl-web-lights-sounds).
 
 
 ## Interface
@@ -123,3 +122,8 @@ Most of the interface was vibe-coded using Claude, using the following tech stac
 - Tone.js
 - Web Serial API (reading the XIAO ESP32-S3)
 - Arduino IDE
+
+
+## Fork
+
+This repo is a fork from [Polpii/sensitive-webs](https://github.com/Polpii/sensitive-webs) vibe-coded in the day 1 of hackathon, which was screen-only, click-to-play spider-web instrument. This version is now a hardware-driven (capacitive web on XIAO ESP32-S3) guided-meditation interface with proximity-vs-touch sound, a full calibration system, and the mouse demoted to an optional emulator. More details about the changes in [CHANGES.md](CHANGES.md).
