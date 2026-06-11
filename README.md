@@ -5,9 +5,9 @@ Sensitive Webs is an interactive dream-catcher-style web, which turns your gestu
 ![Capacitive Web with AI Enhanced](public/demo_capacitive_web_AI_enhanced.JPG)
 
 This project was created as part of the Sensitive Machines 2-day hackathon between [SONY-CSL](https://csl.sony.fr/) and [IFT](https://ift.devinci.fr/) with (in alphabetical order):
-- [Louis Badr ](https://louis-badr.fr/)
 - [Mariana Tamashiro](https://www.marianatamashiro.com/)
 - [Michael Anslow](https://csl.sony.fr/members/michael-anslow/)
+- [Paul-Peter Arslan](https://www.paulpeterarslan.com)
 - [Thomas Juldo](https://www.thomasjuldo.com/)
 - [Zéphir Lorne](https://zephirlorne.com/)
 
